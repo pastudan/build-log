@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1 #{data.title}
+    div#content
+        ul.steps
+            each step, i in data.steps
+                li.step.cf
+                    img(src='/projects/#{name}/img/#{i+1}.jpg')
+                    div.substep-container
+                        h2 Step #{i+1} - #{step.name}
+                        ul.substeps
+                            each substep in step.substeps
+                                li.substep #{substep}

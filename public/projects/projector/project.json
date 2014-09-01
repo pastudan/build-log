@@ -1,0 +1,22 @@
+{
+    "title": "Build log of the rPI Projector",
+    "version": "0.0.1",
+    "steps": [
+        {
+            "name": "Outer Housing",
+            "substeps": [
+                "Assemble the projector",
+                "Post to Kickstarter",
+                "...",
+                "Profit!"
+            ]
+        },
+        {
+            "name": "Build",
+            "substeps": [
+                "Post a build log",
+                "... with pictures"
+            ]
+        }
+    ]
+}
