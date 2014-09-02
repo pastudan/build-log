@@ -1,9 +1,11 @@
 {
     "title": "Build log of the rPI Projector",
     "version": "0.0.1",
+    "stepTitleFormat": "date",
     "steps": [
         {
             "name": "Outer Housing",
+            "date": "2014-09-01T11:26:53Z",
             "substeps": [
                 "Assemble the projector",
                 "Post to Kickstarter",
@@ -13,6 +15,7 @@
         },
         {
             "name": "Build",
+            "date": "2014-09-01T11:26:53Z",
             "substeps": [
                 "Post a build log",
                 "... with pictures"
