@@ -154,10 +154,18 @@ table {
 .cf {
   *zoom: 1;
 }
+/*paul irish's border-box*/
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 /*MY STYLES */
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Open Sans', Helvetica, Arial, sans-serif;
   background-color: #eee;
 }
 a {
@@ -173,7 +181,7 @@ h6 {
   font-weight: bold;
 }
 h1 {
-  margin: 20px 0;
+  margin: 3% 0;
   font-size: 2em;
 }
 h2 {
@@ -181,19 +189,43 @@ h2 {
   font-size: 1.5em;
 }
 #content {
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 95%;
+  margin-bottom: 10%;
+}
+.steps {
   box-shadow: 0 0 6px #ccc;
   background-color: #fff;
-  padding: 25px;
+  padding: 3%;
 }
 .step {
   border-bottom: 1px dotted #ddd;
-  padding: 20px 0;
+  padding: 3% 0;
 }
-.step img {
+.step:first-of-type {
+  padding: 0 0 3%;
+}
+.step:last-of-type {
+  border-bottom: none;
+  padding: 3% 0 0;
+}
+.step img.main {
   border: 1px solid #ddd;
   float: left;
-  width: 600px;
-  height: 400px;
+  width: 60%;
+}
+.step .thumbs {
+  padding: 0 0 5%;
+}
+.step img.thumb {
+  border: 1px solid #ddd;
+  float: left;
+  width: 32%;
+  margin-right: 2%;
+}
+.step img.thumb:last-of-type {
+  margin-right: 0;
 }
 .substeps {
   margin-left: 30px;
@@ -201,5 +233,29 @@ h2 {
 }
 .substep-container {
   float: left;
-  padding: 0 20px;
+  padding: 0 0 0 3%;
+  width: 40%;
+}
+@media (max-device-width: 640px) {
+  h1 {
+    margin: 5% 0;
+    font-size: 4em;
+  }
+  .step img.main {
+    width: 100%;
+  }
+  .substep-container {
+    width: 100%;
+    padding: 3% 0;
+  }
+  .step {
+    border-bottom: 5px dotted #ddd;
+    padding: 3% 0 6% 0;
+  }
+  .step:first-of-type {
+    padding: 0 0 6%;
+  }
+  .step:last-of-type {
+    padding: 3% 0 0%;
+  }
 }
