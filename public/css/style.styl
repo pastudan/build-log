@@ -76,17 +76,19 @@ html
 body
   font: 14px 'Open Sans', Helvetica, Arial, sans-serif
   background-color: #EEEEEE;
+  color: #555
 a
   color: #00B7FF
 h1,h2,h3,h4,h5,h6
-  color: #555;
   font-weight: bold;
 h1
-  margin: 3% 0
+  margin: 3% 0 1%
   font-size: 2em
 h2
   margin: 0 0 20px
   font-size: 1.5em
+h3
+  margin: 0 0 3% 3%;
 #content
   margin: 0 auto
   max-width: 1000px
@@ -124,6 +126,36 @@ h2
   float: left;
   padding: 0 0 0 3%;
   width: 40%
+.button
+  padding: 3%
+  text-align: center
+  font-weight: bold
+  background-color: #eee
+  background-image: linear-gradient(#fcfcfc, #eee)
+  border: 1px solid #ccc
+  font-size: 1.3em
+.button:hover
+  background-color: #ddd
+  background-image: linear-gradient(#eee, #ddd)
+
+
+.step div.main
+  border: 1px solid #ddd
+  float: left
+  width: 60%
+  height: 35vw
+  color: #999
+  text-align: center
+  background-color: #eee
+  background-image: linear-gradient(#fcfcfc, #eee)
+.step div.main:hover
+  background-color: #ddd
+  background-image: linear-gradient(#eee, #ddd)
+.step div.main i
+  font-size: 5em
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 
 
 

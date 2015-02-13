@@ -1,17 +1,68 @@
 extends layout
 
 block content
-    div#content
+    div.
+        <script type="text/template" id="qq-template">
+            <div class="qq-uploader-selector qq-uploader">
+              <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+                <span>Drop files here to upload</span>
+              </div>
+              <div class="qq-upload-button-selector qq-upload-button">
+                <div>Upload a file</div>
+              </div>
+              <span class="qq-drop-processing-selector qq-drop-processing">
+                <span>Processing dropped files...</span>
+                <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+              </span>
+              <ul class="qq-upload-list-selector qq-upload-list">
+                <li>
+                  <div class="qq-progress-bar-container-selector">
+                    <div class="qq-progress-bar-selector qq-progress-bar"></div>
+                  </div>
+                  <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                  <span class="qq-edit-filename-icon-selector qq-edit-filename-icon"></span>
+                  <span class="qq-upload-file-selector qq-upload-file"></span>
+                  <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                  <span class="qq-upload-size-selector qq-upload-size"></span>
+                  <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">Cancel</a>
+                  <a class="qq-upload-retry-selector qq-upload-retry" href="#">Retry</a>
+                  <a class="qq-upload-delete-selector qq-upload-delete" href="#">Delete</a>
+                  <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                </li>
+              </ul>
+            </div>
+        </script>
+    script#new-step-template(type='text/html')
+        li.step.cf.new-step-form
+            form
+                input(type='hidden', name='position', value='{{position}}')
+                div.main
+                    i.fa.fa-camera
+                div.substep-container
+                    div.thumbs.cf
+                    h2 Step {{step-number}} - #[input.name(type='text', name='name', placeholder='Name This Step')]
+                    textarea(name='steps') Hello World
+    div#content(data-img-path='/projects/#{name}/img/',data-project-name='#{name}')
         h1 #{data.title}
+        h3 by #[a(href='http://stuffbydan.com') Dan]
+        //-p A bedside projection alarm clock built using a Raspberry Pi
+        //-h1 Credit
+        //-ul
+            li Original Concept: #[a(href='http://stuffbydan.com') Dan Pastusek]
+            li Modeling and Machining: #[a(href='http://build42.com') Adam Doyle]
         ul.steps
+            li.add-step
+                div.button(data-step-position='beginning') #[i.fa.fa-plus] Add Step
             each step, i in data.steps
                 li.step.cf
                     img.main(src='/projects/#{name}/img/#{i+1}.1.jpg')
                     div.substep-container
                         div.thumbs.cf
                             each thumb in data.steps[i].thumbs
-                                img.thumb(src='/projects/#{name}/img/#{thumb}')
+                                img.thumb(src='/projects/#{name}/img/#{thumb}', data-img-id='#{thumb}')
                         h2 Step #{i+1} - #{step.name}
                         ul.substeps
                             each substep in step.substeps
                                 li.substep #{substep}
+            li.add-step
+                div.button(data-step-position='end') #[i.fa.fa-plus] Add Step
